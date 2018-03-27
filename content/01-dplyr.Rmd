@@ -4,7 +4,7 @@
 
 `dplyr::case_when` goes really well with `geom_text` (or `ggrepel`) for when you want to programmatically label a few of the most interesting features in your plots! And the criteria can be as complex as you want.
 
-```{r case_when}
+```{r case_when, fig.cap = "Selective labelling"}
 set.seed(10)
 mydata <- 
   data.frame(
