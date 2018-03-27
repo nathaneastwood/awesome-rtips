@@ -1,0 +1,20 @@
+Package: awesomertips
+Type: Package
+Title: Awesome R Tips
+Version: 0.0.1
+Authors@R:
+    person("Nathan", "Eastwood", , "nathan.eastwood@icloud.com",
+           role = c("aut", "cre"))
+Description: A book highlighting a collection of awesome R tips I have come 
+    across.
+License: file LICENCE
+URL: https://nathaneastwood.github.io/awesome-rtips/
+BugReports: https://github.com/nathaneastwood/awesome-rtips/issues
+Depends:
+    R (>= 3.3.2),
+    ggrepel,
+    tidyverse
+Imports:
+    bookdown,
+Encoding: UTF-8
+Suggests: testthat

@@ -2,4 +2,16 @@
 
 ## Sample Using a Vector of Sizes
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">the purrr way <a href="https://t.co/MRkoiQdCyO">pic.twitter.com/MRkoiQdCyO</a></p>&mdash; Jenny Bryan (@JennyBryan) <a href="https://twitter.com/JennyBryan/status/739895782434705409?ref_src=twsrc%5Etfw">June 6, 2016</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+```{r vector_sizes}
+nested_iris <- 
+  iris %>% 
+  group_by(Species) %>% 
+  nest() %>% 
+  mutate(n = 2:4)
+nested_iris %>% 
+  mutate(subsamp = map2(data, n, sample_n)) %>% 
+  select(Species, subsamp) %>% 
+  unnest()
+```
+
+Credit: [\@JennyBryan](https://twitter.com/JennyBryan/status/739895782434705409?ref_src=twsrc%5Etfw)

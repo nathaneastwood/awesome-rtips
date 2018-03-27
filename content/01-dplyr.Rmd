@@ -2,16 +2,64 @@
 
 ## `case_when()`
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">💡 dplyr::case_when goes really well with geom_text (or ggrepel) for when you want to programmatically label a few of the most interesting features in your <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> plots! And the criteria can be as complex as you want 🎉 <a href="https://t.co/0jUp1uarde">pic.twitter.com/0jUp1uarde</a></p>&mdash; James Goldie (@rensa_co) <a href="https://twitter.com/rensa_co/status/976340414016843776?ref_src=twsrc%5Etfw">March 21, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+`dplyr::case_when` goes really well with `geom_text` (or `ggrepel`) for when you want to programmatically label a few of the most interesting features in your plots! And the criteria can be as complex as you want.
+
+```{r case_when}
+set.seed(10)
+mydata <- 
+  data.frame(
+    x = 1:10,
+    y = rnorm(10),
+    name = c("Apple", "Banana", "Kiwi", "Orange", "Watermelon", "Grapes", 
+             "Pear", "Cantelope", "Tomato", "Satsuma"),
+    stringsAsFactors = FALSE
+  ) %>% 
+  mutate(
+    name_poor = case_when(
+      y < 0 ~ name,
+      TRUE ~ ""
+    )
+  )
+
+ggplot(mydata, aes(x = x, y = y)) + 
+  geom_point(size = 5) + 
+  geom_text_repel(aes(label = name_poor), point.padding = 2)
+```
+
+Credit: [\@rensa_co](https://twitter.com/rensa_co/status/976340414016843776?ref_src=twsrc%5Etfw)
 
 ## `mutate_at()`
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">dplyr trick: mutate_at() takes a range of consecutive columns, with var(col1:coln) if you want to batch convert a bunch of columns: <a href="https://t.co/RrvMQ9ols1">pic.twitter.com/RrvMQ9ols1</a></p>&mdash; Vince Buffalo (@vsbuffalo) <a href="https://twitter.com/vsbuffalo/status/831651327411302404?ref_src=twsrc%5Etfw">February 14, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+`mutate_at()` takes a range of consecutive columns, with `var(col1:coln)` if you want to batch convert a bunch of columns:
+
+```{r mutate_at}
+iris %>% 
+  mutate_at(vars(Sepal.Length:Petal.Width), as.character) %>% 
+  as_tibble()
+```
+
+Credit: [\@vsbuffalo](https://twitter.com/vsbuffalo/status/831651327411302404?ref_src=twsrc%5Etfw)
 
 ## `mutate_if()`
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Great dplyr tip! <br><br>df %&gt;% mutate_if(is.factor, as.character)<br><br>Converts all factor columns to characters. <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;ref_src=twsrc%5Etfw">#tidyverse</a></p>&mdash; Geoffrey Thomson (@GojThomson) <a href="https://twitter.com/GojThomson/status/847241896015441921?ref_src=twsrc%5Etfw">March 30, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+Convert all factor columns to characters. 
+
+```{r mutate_if}
+iris %>% 
+  mutate_if(is.factor, as.character) %>% 
+  as_tibble()
+```
+
+Credit: [\@GojThomson](https://twitter.com/GojThomson/status/847241896015441921?ref_src=twsrc%5Etfw)
 
 ## `summarise_at()`
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Todays fun <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;ref_src=twsrc%5Etfw">#tidyverse</a> function! dplyr::summarize_at()<br>Applies multiple summary functions to multiple variables!<br><br>mtcars %&gt;% <br> group_by(cyl, am) %&gt;% <br> summarize_at(vars(disp, hp, mpg), funs(mean, sd)) <a href="https://t.co/JGN6Guebd6">pic.twitter.com/JGN6Guebd6</a></p>&mdash; Thomas Mock (@thomas_mock) <a href="https://twitter.com/thomas_mock/status/967467213623119873?ref_src=twsrc%5Etfw">February 24, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+`dplyr::summarise_at()` applies multiple summary functions to multiple variables!
+
+```{r summarise_at}
+mtcars %>% 
+  group_by(cyl, am) %>% 
+  summarize_at(vars(disp, hp, mpg), funs(mean, sd))
+```
+
+Credit: [\@thomas_mock](https://twitter.com/thomas_mock/status/967467213623119873?ref_src=twsrc%5Etfw)

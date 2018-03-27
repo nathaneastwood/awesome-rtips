@@ -12,8 +12,12 @@ documentclass: book
 knitr::opts_chunk$set(
   out.width = "80%",
   fig.align = "center",
-  eval = FALSE
+  eval = TRUE
 )
+library(tidyverse)
+library(ggrepel)
 ```
 
-The purpose of this document is to collect together awesome R tips that I have seen on Twitter. If you see any additional awesome R tips that you think would be a great addition to this document then please feel free to submit a [Pull Request](https://github.com/nathaneastwood/awesome-rtips/pulls).
+The purpose of this document is to collect together awesome R tips that I have seen on Twitter and elsewhere on the interweb. Sometimes I would see a tip and it may be out of date due to deprecation or it would only have a picture of the code. So this repository provides tests for the tips I have collated.
+
+If you see any additional awesome R tips that you think would be a great addition to this document then please feel free to submit a [Pull Request](https://github.com/nathaneastwood/awesome-rtips/pulls).
