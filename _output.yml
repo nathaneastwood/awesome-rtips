@@ -7,7 +7,6 @@ output:
         after: |
           <li><a href="https://github.com/nathaneastwood/awesome-rtips" target="blank">Source on GitHub</a></li>
     css: rsrc/style/custom.css
-    highlight: espresso
   bookdown::pdf_book:
     includes:
       in_header: preamble.tex
