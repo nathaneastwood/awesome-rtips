@@ -1,0 +1,19 @@
+--- 
+title: "Awesome R Tips!"
+date: "`r format(Sys.Date(), '%d-%b-%Y')`"
+site: "bookdown::bookdown_site"
+github-repo: nathaneastwood/awesome-rtips
+documentclass: book
+---
+
+# Preface {-}
+
+```{r knitrPrefs, include = FALSE}
+knitr::opts_chunk$set(
+  out.width = "80%",
+  fig.align = "center",
+  eval = FALSE
+)
+```
+
+The purpose of this document is to collect together awesome R tips that I have seen on Twitter. If you see any additional awesome R tips that you think would be a great addition to this document then please feel free to submit a [Pull Request](https://github.com/nathaneastwood/awesome-rtips/pulls).

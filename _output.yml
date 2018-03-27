@@ -1,0 +1,12 @@
+output:
+  bookdown::gitbook:
+    config:
+      sharing: no
+      toc:
+        collapse: none
+        before: |
+          <li><a href="./">Awesome R Tips!</a></li>
+        after: |
+          <li><a href="https://github.com/nathaneastwood/awesome-rtips" target="blank">Source on GitHub</a></li>
+    css: rsrc/style/custom.css
+    highlight: espresso

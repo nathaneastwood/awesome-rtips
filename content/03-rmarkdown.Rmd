@@ -1,0 +1,13 @@
+# `rmarkdown`
+
+## Extract Metadata
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I can&#39;t remember where I saw this mentioned earlier but ZOMG this handy for rmarkdown users!<br>?rmarkdown::metadata <a href="https://t.co/jsIBNSnce7">pic.twitter.com/jsIBNSnce7</a></p>&mdash; Steph Locke (@SteffLocke) <a href="https://twitter.com/SteffLocke/status/721368166232911873?ref_src=twsrc%5Etfw">April 16, 2016</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+## Send Output to the Console
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">On behalf of all of us who despise “notebooks”: <a href="https://twitter.com/hashtag/ty?src=hash&amp;ref_src=twsrc%5Etfw">#ty</a> <a href="https://twitter.com/rstudio?ref_src=twsrc%5Etfw">@rstudio</a> <a href="https://t.co/osBCL2LN8V">pic.twitter.com/osBCL2LN8V</a></p>&mdash; hrbr&#39;Challa (@hrbrmstr) <a href="https://twitter.com/hrbrmstr/status/835871091960721409?ref_src=twsrc%5Etfw">February 26, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+# Specify Reference Placement
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> rmarkdown tip: use a div with id=&quot;refs&quot; to tell pandoc where to insert a bibliography <a href="https://t.co/t334QAii8N">pic.twitter.com/t334QAii8N</a></p>&mdash; tj mahr 🍕🍍 (@tjmahr) <a href="https://twitter.com/tjmahr/status/763435602935095296?ref_src=twsrc%5Etfw">August 10, 2016</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
