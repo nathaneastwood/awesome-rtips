@@ -15,3 +15,12 @@ nested_iris %>%
 ```
 
 Credit: [\@JennyBryan](https://twitter.com/JennyBryan/status/739895782434705409?ref_src=twsrc%5Etfw)
+
+## Read in Multiple csv Files Into a Single data.frame
+
+```{r read_csv}
+fs::dir_ls(data_dir, regexp = "\\.csv$") %>%
+  map_dfr(read_csv)
+```
+
+Credit: [\@grrrck](https://twitter.com/grrrck/status/1046767116429479936?s=21)
